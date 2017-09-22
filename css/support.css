@@ -1,0 +1,81 @@
+@import url(iransans/fontiran.css);
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "IRANSans";
+	list-style-type: none;
+	text-decoration: none;
+	direction:rtl;
+	border-collapse: collapse;
+}
+.clear {
+	clear: both;
+}
+body {
+	width: 100%;
+	margin: 0 auto;
+	background-image: url(../img/light-tile.gif);
+	background-size: 260px;
+}
+.set {
+	max-width: 1000px;
+	margin: 25px auto;
+}
+.header {
+	width: 100%;
+	height: 40px;
+	background-color: rgb(243, 243, 243);
+}
+.header ul {
+	padding: 0;
+}
+.header ul li{
+	padding: 7px 0;
+	display: inline-block;
+}
+.header ul li a{
+	color: #000000;
+	padding: 7px 10px 6px 10px;
+}
+.header ul li a:hover {
+	background-color: rgba(254, 1, 107, 0.52);
+}
+.content {
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 50px 10px;
+	text-align: center;
+}
+.image {
+	max-width: 500px;
+	margin: 0 auto;
+}
+.image img {
+	width: 100%;
+}
+p {
+	margin-bottom: 15px;
+}
+@media screen and (max-width: 1000px) {
+	.set {
+		margin: 0;
+	}
+}
+@media screen and (max-width: 500px) {
+	p {
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 440px) {
+	.header ul {
+		font-size: 14px;
+	}
+	.header ul li {
+		padding: 8px 0;
+	}
+	.header ul li a {
+		padding: 8px 7px;
+	}
+}

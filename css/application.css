@@ -1,0 +1,312 @@
+@import url(iransans/fontiran.css);
+*{
+    box-sizing: border-box;
+    font-family: "IRANSans";
+    text-decoration: none;
+    direction:rtl;
+    border-collapse: collapse;
+	margin: 0;
+}
+input {
+	border: none;
+}
+.clear {
+    clear: both;
+}
+body {
+    width: 100%;
+    margin: 0 auto;
+    background-image: url(../img/light-tile.gif);
+    background-size: 260px;
+}
+.set {
+    max-width: 1000px;
+    margin: 25px auto;
+}
+.header {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(243, 243, 243);
+}
+.header ul {
+	padding: 0;
+}
+.header ul li{
+    padding: 7px 0;
+    display: inline-block;
+}
+.header ul li a{
+    color: #000000;
+    padding: 7px 10px 6px 10px;
+}
+.header ul li a:hover {
+    background-color: rgba(254, 1, 107, 0.52);
+}
+.content {
+    background-color: rgba(255, 255, 255, 0.7);
+	min-height: 350px;
+	width: 100%;
+	height: auto;
+	line-height: 120%;
+	box-sizing: border-box;
+}
+.app-image {
+	float: left;
+	left: 0;
+	width: 40%;
+}
+#logo-container {
+	margin: 70px 0;
+}
+#logo {
+	position: relative;
+}
+.app-image .application {
+	margin: 0 20%;
+}
+.title {
+	position: absolute;
+	right: 120px;
+	top: 62px;
+}
+.application-logo {
+	height: 18px;
+	width: 18px;
+}
+.title > span {
+	color: #fff;
+	font-family: "IranSans";
+	font-size: 12px;
+	vertical-align: super;
+	cursor: default;
+}
+.set .description {
+	width: 60%;
+	height: auto;
+	float: right;
+	margin: 30px auto;
+	text-align: right !important;
+	font-size: 13px !important;
+	color: #717172;
+}
+.description p {
+    margin-bottom: 15px;
+	font-size: 14px;
+}
+.set .description ul li {
+	font-size: 14px;
+	margin-right: 15px;
+}
+.set .description ul {
+	margin: 0;
+	text-align: justify;
+}
+.explanations ul p {
+	margin-top: 0;
+}
+.set .description div.submit {
+	margin: 10px auto !important;
+}
+.set .description div.submit {
+	width: 300px;
+	margin: 35px auto 0;
+	cursor: pointer;
+}
+.set .description div.submit input {
+	border: 0;
+	width: 250px;
+	height: 47px;
+	background-color: #b6b6b6;
+	color: #000000;
+	font-family: "IranSans";
+	font-size: 20px;
+	cursor: pointer;
+	margin: 0 25px;
+}
+.set .description div.submit input:hover {
+	box-shadow: 0 5px #00490f;
+}
+.set .description div.submit input:active {
+	box-shadow: 0 2px #00490f;
+	transform: translateY(5px);
+}
+.set .description div.submit input:focus {
+	outline: none;
+}
+.qr {
+  background-color: #fff;
+  border: 1px solid #e3e1e2;
+  color: #1b4986;
+  margin: 15px 40px 0 0;
+  opacity: 0.85;
+  line-height: 20px;
+}
+.qr div.description {
+  float: right;
+  margin: 12px !important;
+  width: 295px;
+}
+.qr .description > p {
+  color: #1b4986;
+  margin: 5px 0;
+}
+.set .qr .qrcode {
+  float: left;
+  height: 90px;
+  margin: 15px;
+  width: 90px;
+}
+.set .description .application-deactive {
+  background-color: #f2dede;
+  border: 1px solid #eed3d7;
+  color: #b94a48;
+  font-family: "IranSans";
+  font-size: 21px;
+  margin: 40px 40px 40px 0;
+  padding: 14px;
+  text-align: center;
+  display:none;
+}
+@media screen and (max-width: 1000px) {
+    .set {
+        margin: 0 auto;
+		width: 100%;
+    }
+	.content {
+		width: 100%;
+	}
+	.header {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 915px) {
+    .qr div.description {
+		width: 250px;
+	}
+}
+@media screen and (max-width: 845px) {
+    .content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.content .explanations {
+		order: 2;
+		margin: 0 auto;
+		width: 100%;
+		padding: 0 10px;
+		box-sizing: border-box;
+	}
+	.app-image {
+		position: static;
+		text-align: center;
+		width: 100%;
+	}
+	.app-image .application {
+		margin: 0;
+	}
+	.app-image .title {
+		right: 42px;
+	}
+	.qr {
+		margin: 15px auto 0;
+	}
+	#logo {
+		width: 240px;
+		margin: 0 auto;
+	}
+	#logo-container {
+		margin-top: 25px;
+		margin-bottom: 25px;
+	}
+	.set .description ul {
+		padding-right: 0;
+	}
+}
+@media screen and (max-width: 512px) {
+	.qr {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		text-align: center;
+	}
+	.qr .qrcode {
+		order: 1;
+		margin: 15px auto !important;
+	}
+	.qr .description {
+		width: 90% !important;
+		margin: 12px auto !important;
+	}
+}
+@media screen and (max-width: 440px) {
+	.set .description ul li, .set .description ul strong, .set .description ul p, .header ul {
+		font-size: 14px;
+	}
+	.header ul li {
+		padding: 8px 0;
+	}
+	.header ul li a {
+		padding: 8px 7px;
+	}
+	#logo .application {
+		width: 65%;
+	}
+	.title {
+		right: 70px;
+		top: 37px;
+	}
+	.title > span {
+		font-size: 8px;
+		vertical-align: middle;
+	}
+	.application-logo {
+		width: 10px;
+		height: 10px;
+	}
+	.app-image .title {
+		right: 68px;
+	}
+}
+@media screen and (max-width: 400px) {
+	.set .description div.submit {
+		width: 75%;
+		margin: 10px auto !important;
+		cursor: pointer;
+	}
+	.set .description div.submit input {
+		width: 100%;
+		margin: 0 auto !important;
+		font-size: 16px;
+	}
+}
+@media screen and (max-width: 322px) {
+	#logo {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 296px) {
+	.title {
+		right: 74px;
+		top: 23px;
+	}
+	.title > span {
+		font-size: 5px;
+	}
+	.application-logo {
+		width: 7px;
+		height: 7px;
+	}
+}
+@media screen and (max-width: 275px) {
+	.title {
+		right: 70px;
+		top: 20px;
+	}
+}
+@media screen and (max-width: 288px) {
+	.header ul li a {
+		padding-left: 2.949px;
+		padding-right: 2.949px;
+	}
+}
