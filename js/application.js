@@ -2,7 +2,7 @@ var downloadURL = "";
 $(document).ready(function () {
     $.ajax({
         type: 'POST',
-        url: 'http://chargereseller.com/webservices/downloadApplication/android',
+        url: 'https://www.chargereseller.com/webservices/downloadApplication/android',
         data: {"WebserviceId":webserviceId},
     async: false,
         contentType: "application/json",
