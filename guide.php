@@ -21,11 +21,11 @@
 				</ul>
 			</div>
 			<div class="menu">
-					<div data-type="topup" class="active"><img src="img/direct.png"><p>شارژ مستقیم</p></div>
-					<div data-type="pin"><img src="img/card.png"><p>کارت شارژ</p></div>
-					<div data-type="bill"><img src="img/bill.png"><p>پرداخت قبض</p></div>
-					<div data-type="giftcard"><img src="img/giftcard.png"><p>گیفت کارت</p></div>
-					<div data-type="antivirus"><img src="img/antivirus.png"><p>آنتی ویروس</p></div>
+					<div data-type="topup" class="active"><img alt="آموزش خرید شارژ مستقیم" src="img/direct.png"><p>شارژ مستقیم</p></div>
+					<div data-type="pin"><img alt="آموزش خرید کارت شارژ" src="img/card.png"><p>کارت شارژ</p></div>
+					<div data-type="bill"><img alt="آموزش پرداخت قبض" src="img/bill.png"><p>پرداخت قبض</p></div>
+					<div data-type="giftcard"><img alt="آموزش خرید گیفت کارت" src="img/giftcard.png"><p>گیفت کارت</p></div>
+					<div data-type="antivirus"><img alt="آموزش خرید آنتی ویروس" src="img/antivirus.png"><p>آنتی ویروس</p></div>
 			</div>
 			<div class="content">
 				<div class="topup active">

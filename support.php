@@ -22,7 +22,7 @@
 			</div>
 			<div class="content">
 				<section class="error">
-					<div class="image"><img src="img/support.png"></div>
+					<div class="image"><img alt="پشتیبانی" src="img/support.png"></div>
 					<p>در صورت بروز هرگونه اشکال و یا نیاز به راهنمائی می توانید با واحد پشتیبانی تماس حاصل فرمائید.</p>
 					<p><strong>تلفن پشتیبانی: 88019574-021</strong></p>
 					<p>پشتیبانی تلفنی شنبه تا چهارشنبه از ساعت 9 الی 17 پاسخگوی شماست.</p>

@@ -33,7 +33,7 @@
 							$billTypesPersian = array("آب", "بــرق", "گـــاز", "تلفن ثابت", "تلفن همراه", "عوارض شهرداری","","", "جریمه راهنمایی و رانندگی");
 							$billTypesEnglish = array("water", "electricity", "gas", "telephone", "cellphone", "mayoralty","","", "police");
 				?> 
-				<div class="image"><img src="img/success.png"></div>
+				<div class="image"><img alt="تراکنش موفق" src="img/success.png"></div>
 				<strong>تراکنش موفق</strong>
 				
 				<div class="response Bill">
@@ -80,7 +80,7 @@
 					$operator = explode('-', $result['products']['type']);
 		?> 
 				
-				<div class="image"><img src="img/success.png"></div>
+				<div class="image"><img alt="تراکنش موفق" src="img/success.png"></div>
 				<strong>تراکنش موفق</strong>
 				<div class="response topup">
 					<table>
@@ -117,7 +117,7 @@
 				} elseif ($transactionType == 'IN') {
 		?>
 		
-					<div class="image"><img src="img/success.png"></div>
+					<div class="image"><img alt="تراکنش موفق" src="img/success.png"></div>
 					<strong>تراکنش موفق</strong>
 					<div class="response intenetpackage">
 						<table>
@@ -160,7 +160,7 @@
 				$productCount = count($result['products']['details']);
 		?>
 					
-					<div class="image"><img src="img/success.png"></div>
+					<div class="image"><img alt="تراکنش موفق" src="img/success.png"></div>
 					<strong>تراکنش موفق</strong>
 					<div id="description"><p><?php echo $pinProductDescription[$transactionType]; ?></p></div>
 			<?php
@@ -289,7 +289,7 @@
 		?>
 					
 					<section class="error">
-						<div class="image"><img src="img/error.png"></div>
+						<div class="image"><img alt="تراکنش ناموفق" src="img/error.png"></div>
 						<strong>تراکنش ناموفق</strong>
 						<p>چنانچه وجه از حساب شما کسر شده است، طی 72 ساعت کاری آینده از طرف بانک وجه به حساب شما باز می گردد.</p>
 					</section>

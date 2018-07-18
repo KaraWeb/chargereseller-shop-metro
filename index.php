@@ -21,14 +21,14 @@
                 <li><a href="<?php echo $root . '/support.php'; ?>">پشتیبانی</a></li>
 			</ul>
 		</div>
-		<div class="slider"><img src="img/baner.jpg"></div>
+		<div class="slider"><img alt="خرید شارژ مستقیم و کارت شارژ و محصولات مجازی" src="img/baner.jpg"></div>
 		<div class="menu">
-				<div data-type="TopUp"><section><img src="img/direct.png"><p>شارژ مستقیم</p></section></div>
-				<div data-type="PIN"><section><img src="img/card.png"><p>کارت شارژ</p></section></div>
-                <div data-type="InternetPackage"><section><img src="img/internet-package.png"><p>بسته اینترنت</p></section></div>
-                <div data-type="bill-payment"><section><img src="img/bill.png"><p>پرداخت قبض</p></section></div>
-				<div data-type="giftcard"><section><img src="img/giftcard.png"><p>گیفت کارت</p></section></div>
-				<div data-type="antivirus"><section><img src="img/antivirus.png"><p>آنتی ویروس</p></section></div>
+				<div data-type="TopUp"><section><img alt="خرید شارژ مستقیم" src="img/direct.png"><p>شارژ مستقیم</p></section></div>
+				<div data-type="PIN"><section><img alt="خرید کارت شارژ" src="img/card.png"><p>کارت شارژ</p></section></div>
+                <div data-type="InternetPackage"><section><img alt="خرید بسته اینترنتی" src="img/internet-package.png"><p>بسته اینترنت</p></section></div>
+                <div data-type="bill-payment"><section><img alt="پرداخت قبض" src="img/bill.png"><p>پرداخت قبض</p></section></div>
+				<div data-type="giftcard"><section><img alt="خرید گیفت کارت" src="img/giftcard.png"><p>گیفت کارت</p></section></div>
+				<div data-type="antivirus"><section><img alt="خرید آنتی ویروس" src="img/antivirus.png"><p>آنتی ویروس</p></section></div>
 				<section class="clear"></section>
 		</div>
 		<div class="content">
@@ -330,7 +330,7 @@
 	</div>
 	<div class="load">
 		<section>
-			<img src="img/load.gif">
+			<img alt="در حال بارگذاری" src="img/load.gif">
 			<p>در حال بارگذاری</p>
 		</section>
 		<section class="hide">

@@ -24,9 +24,9 @@
                 <div class="app-image">
                     <div id="logo-container">
                         <div id="logo">
-                            <img class="application" src="<?php echo $root; ?>/img/Mobile-Charge-Application-Logo.png">
+                            <img class="application" alt="اپلیکیشن خرید شارژ و محصولات مجازی" src="<?php echo $root; ?>/img/Mobile-Charge-Application-Logo.png">
 							<div class="title">
-								<img class="application-logo" src="https://www.chargereseller.com/img/mobile_app_logo/default.png">
+								<img class="application-logo" alt="لوگوی اپلیکیشن" src="https://www.chargereseller.com/img/mobile_app_logo/default.png">
 								<span><?php echo substr($config['title'], 0, 25); ?></span>
 							</div>
                         </div>
