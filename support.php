@@ -8,7 +8,7 @@
 		<meta name="keywords" content="<?php echo $config['keywords']; ?>" />
 		<meta name="viewport" content="width=device-width, maximum-scale=1.0">
 		<link type="image/x-icon" rel="icon" href="css/favicon.ico"/>
-		<link type="text/css" rel="stylesheet" href="css/support.css">
+		<link type="text/css" rel="stylesheet" href="css/support.min.css">
 	</head>
 	<body>
 		<div class="set">

@@ -8,7 +8,7 @@
         <meta name="keywords" content="<?php echo $config['keywords']; ?>"/>
         <meta name="viewport" content="width=device-width, maximum-scale=1.0">
         <link type="image/x-icon" rel="icon" href="css/favicon.ico"/>
-        <link type="text/css" rel="stylesheet" href="css/application.css">
+        <link type="text/css" rel="stylesheet" href="css/application.min.css">
     </head>
     <body>
         <div class="set">
@@ -76,6 +76,6 @@
         </script>
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/jquery.qrcode-0.11.0.min.js"></script>
-        <script type="text/javascript" src="js/application.js"></script>
+        <script type="text/javascript" src="js/application.min.js"></script>
     </body>
 </html>

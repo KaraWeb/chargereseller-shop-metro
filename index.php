@@ -8,8 +8,8 @@
 		<meta name="keywords" content="<?php echo $config['keywords']; ?>" />
 		<meta name="viewport" content="width=device-width, maximum-scale=1.0">
 		<link type="image/x-icon" rel="icon" href="css/favicon.ico"/>
-		<link type="text/css" rel="stylesheet" href="css/jquery.qtip.css" />
-		<link type="text/css" rel="stylesheet" href="css/default.css">
+		<link type="text/css" rel="stylesheet" href="css/jquery.qtip.min.css" />
+		<link type="text/css" rel="stylesheet" href="css/default.min.css">
 	</head>
 	<body>
 	<div class="set">
@@ -323,9 +323,9 @@
 			<input type="text" name="data[secondOutputType]"  value="get">
 		</form>
 		<script src="js/jquery-3.2.1.min.js"></script>
-		<script src="js/jquery.cookie.js"></script>
+		<script src="js/jquery.cookie.min.js"></script>
 		<script type='text/javascript' src='js/jquery.qtip.min.js'></script>
-		<script src="js/script.js"></script>
+		<script src="js/script.min.js"></script>
 		<script type="text/javascript" src="https://cdn.zarinpal.com/zarinak/v1/checkout.js"></script>
 	</div>
 	<div class="load">

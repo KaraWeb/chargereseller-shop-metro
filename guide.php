@@ -8,7 +8,7 @@
 		<meta name="keywords" content="<?php echo $config['keywords']; ?>" />
 		<meta name="viewport" content="width=device-width, maximum-scale=1.0">
 		<link type="image/x-icon" rel="icon" href="css/favicon.ico"/>
-		<link type="text/css" rel="stylesheet" href="css/guide.css">
+		<link type="text/css" rel="stylesheet" href="css/guide.min.css">
 	</head>
 	<body>
 		<div class="set">
@@ -223,6 +223,6 @@
 			<div class="clear"></div>
 		</div>
 		<script src="js/jquery-3.2.1.min.js"></script>
-		<script src="js/guide.js"></script>
+		<script src="js/guide.min.js"></script>
 	</body>
 </html>
