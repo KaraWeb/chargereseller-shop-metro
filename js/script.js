@@ -80,8 +80,7 @@ $(document).ready(function () {
             $(".invoice .antivirus li").css('margin-bottom', '5px');
         }
         if ($(this).data("type") == "InternetPackage") {
-            $("input[type=radio][name=radio-sim-type][value=Prepaid]").prop('checked', true);
-            setInternetPackage("mtn", $("option:selected").data("package-type"), "Prepaid");
+            setInternetPackage('mtn');
             setPackage();
             return;
         }
@@ -186,18 +185,7 @@ $(document).ready(function () {
         var packageType = $(this).data("package-type").toLowerCase();
         $("." + packageType).slideDown();
     });
-
-    $('input[type=radio][name=radio-sim-type]').change(function () {
-        if (this.value == 'Prepaid') {
-            setInternetPackage("mtn", $("option:selected").data("package-type"), "Prepaid");
-        } else if (this.value == 'Postpaid') {
-            setInternetPackage("mtn", $("option:selected").data("package-type"), "Postpaid");
-        }
-    });
-
     $('section.internet-package select').change(function () {
-        $("input[type=radio][name=radio-sim-type][value=Prepaid]").prop('checked', true);
-        setInternetPackage("mtn", $(this).find(':selected').data('package-type'), "Prepaid");
         if ($(this).find(':selected').data('package-type') == "IN-MTN-TDLTE") {
             $(".sim-type").hide();
             $(".package").css('margin-top', '30px');
@@ -399,28 +387,19 @@ $(document).ready(function () {
                 }
             }
         } else if (DefaultChargeKind == 'InternetPackage') {
-            if (cellphone.length == 11 && !isNaN(cellphone)) {
-                if ($("option:selected").data("package-type") == 'IN-MTN-TDLTE') {
-                    if (jQuery.inArray(cellphone.substr(0, 3), ['094']) == -1) {
-                        cellphoneCheck = false;
-                        $(".hint-cell p").text("شماره وارد شده صحیح نیست.")
-                    }
-                } else {
-                    if (jQuery.inArray(cellphone.substring(0, 3), ['093', '090']) == -1) {
-                        cellphoneCheck = false;
-                    }
-                }
-            } else {
-                if (cellphone.length == 0) {
-                    cellphoneCheck = false;
-                    $(".hint-cell p").text("شماره موبایل خود را وارد کنید.")
-                } else {
-                    cellphoneCheck = false;
-                }
+            var cellphoneFormats = {
+                "mtn": /(0)?9([0,3]{1})\d{8}/,
+                "mci": /(0)?9([1,9]{1})\d{8}/,
+                "tdlte": /(0)?94\d{8}/,
+                "rtl": /^([0]{1})([9]{1})([2]{1})([1,2]{1})([0-9]{7})$/
+            };
+            var regex = cellphoneFormats[DefaultOperator.toLowerCase()];
+            var selectedType = $('.internet-package').find('section.active').data('type');
+            if (selectedType.includes('ثابت')) {
+                regex = cellphoneFormats['tdlte'];
             }
-            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            if (email.length > 0 && !filter.test(email)) {
-                emailCheck = false;
+            if (!regex.test(cellphone)) {
+                cellphoneCheck = false;
             }
         } else {
             if (cellphone.length == 0 && email.length == 0) {
@@ -597,7 +576,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: 'GET',
-        url: "https://chr724.ir/services/v3/EasyCharge/initializeData",
+        url: "https://chr724.ir/services/v3/EasyCharge/initializeDataCategorizedFormat",
         data: "{}",
         async: false,
         contentType: "application/json",
@@ -660,17 +639,17 @@ $(document).ready(function () {
 
         var url = window.location.href
         if (url.match("#topup$")) {
-            $('div[data-type="TopUp"]').trigger( "click" );
+            $('div[data-type="TopUp"]').trigger("click");
         } else if (url.match("#pin$")) {
-            $('div[data-type="PIN"]').trigger( "click" );
+            $('div[data-type="PIN"]').trigger("click");
         } else if (url.match("#internetPackage$")) {
-            $('div[data-type="InternetPackage"]').trigger( "click" );
+            $('div[data-type="InternetPackage"]').trigger("click");
         } else if (url.match("#bill$")) {
-            $('div[data-type="bill-payment"]').trigger( "click" );
+            $('div[data-type="bill-payment"]').trigger("click");
         } else if (url.match("#giftcard$")) {
-            $('div[data-type="giftcard"]').trigger( "click" );
+            $('div[data-type="giftcard"]').trigger("click");
         } else if (url.match("#antivirus$")) {
-            $('div[data-type="antivirus"]').trigger( "click" );
+            $('div[data-type="antivirus"]').trigger("click");
         }
     }
 
@@ -719,60 +698,57 @@ $(document).ready(function () {
         });
     }
 
-    function setInternetPackage(operator, category, simType) {
-        console.log(simType);
-        var internetKeys = ["IN-MTN-Hourly", "IN-MTN-Daily", "IN-MTN-Weekly", "IN-MTN-Monthly", "IN-MTN-Amazing", "IN-MTN-TDLTE"];
-        var internetKeysPersian = ["اینترنت ایرانسل ساعتی", "اینترنت ایرانسل روزانه", "اینترنت ایرانسل هفتگی", "اینترنت ایرانسل ماهانه", "اینترنت ایرانسل شگفت انگیز", "اینترنت ثابت TDLTE"];
-        stringData = JSON.stringify(products);
-        $.each(internetKeys, function (key, value) {
-            stringData = stringData.replace('"' + internetKeysPersian[key] + '"', '"' + value + '"');
-        });
-        var internetPackages = JSON.parse(stringData)["internetPackage"];
+    $('.internet-package').find('.operator').on('click', function () {
+        DefaultOperator = $(this).data('type');
+        setInternetPackage($(this).data('type').toLowerCase());
+    });
+    $('.internet-package .sim-type').on('click', 'section', function () {
+        var radioButton = $(this).find('input:radio').prop('checked', true);
+        $(radioButton).parent().parent().parent().find('section.active').removeClass('active');
+        $(radioButton).parent().parent().addClass('active');
+        setInternetPackage($('.internet-package').find('.operator.active').data('type').toLowerCase(), $(this).data('type'));
+    });
+    $('.internet-package').on('change', 'select', function () {
+        setInternetPackage($('.internet-package').find('.operator.active').data('type').toLowerCase(), $('.internet-package').find('section.active').data('type'), $(this).find('option:selected').data('package-type'));
+    });
 
-        var jsonData = internetPackages[operator][category];
-        $('select#InternetPackage' + category + 'Types').find('option').remove();
-        var options = "";
-        var packageNotExists = true;
-        $.each(jsonData, function (key, value) {
-            if (simType == "Prepaid") {
-                if (value["name"].includes("مشترکین دائمی") != true) {
-                    packageNotExists = false;
-                    options += "<section data-package-id=\"" + value.id + "\" data-price=\"" + value.price + "\"><div  class=\"credit-info\">" + value.name + ", " + value.price + " تومان</div></section>";
-                }
-            } else if (simType == "Postpaid") {
-                if (value["name"].includes("مشترکین دائمی") == true) {
-                    packageNotExists = false;
-                    options += "<section data-package-id=\"" + value.id + "\" data-price=\"" + value.price + "\"><div  class=\"credit-info\">" + value.name + ", " + value.price + " تومان</div></section>";
+    function setInternetPackage(operator, simType, category, packageId) {
+        var packages = products.internetPackage[operator];
+        if (simType == null) {
+            //clear divs
+            $('section.internet-package').find('.sim-type').html("<div class='clear'></div>");
+            $.each(packages, function (key, value) {
+                $('section.internet-package').find('.sim-type').append("<section data-type='" + key + "'><label class='charge-type'><input type='radio' name='radio-sim-type' class='charge-button'/><p>" + key + "</p></label></section>");
+            });
+            $('section.internet-package').find('.sim-type section').first().trigger('click');
+        } else {
+            if (category == null) {
+                var internetTypes = packages[simType];
+                //clear select
+                $('section.internet-package').find('select').html('');
+                $.each(internetTypes, function (key, value) {
+                    $('section.internet-package').find('select').append("<option data-package-type='" + key + "'>" + key + "</option>");
+                });
+                $('section.internet-package').find('select').first().trigger('change');
+            } else {
+                var packagesByCategory = packages[simType][category];
+                //clear package
+                $('.package').html('');
+                if (packagesByCategory == null) {
+                    $('.package').html("بسته ای در این دسته وجود ندارد.");
+                } else {
+                    $.each(packagesByCategory, function (key, value) {
+                        var option = "<section data-package-id=\"" + value.id + "\" data-price=\"" + value.price + "\"><div  class=\"credit-info\">" + value.name + ", " + value.price + " تومان</div></section>";
+                        $('.package').append(option);
+                    });
+                    if (packageId == null) {
+                        $('.package section').first().trigger('click');
+                    } else {
+                        $('.package').find('section[data-package-id="' + packageId + '"]').trigger('click');
+                    }
                 }
             }
-        });
-        $(".package").html(options).show();
-        setText();
-
-        $(".package section:first-child").addClass("active");
-        $("#dataPackageId").val($(".package section:first-child").data("package-id"));
-        $("#dataAmount").val($(".package section:first-child").data("price"));
-        if ($(".package section:first-child").find("div").length != 0) {
-            $("#package-name").html($(".package section:first-child").find("div").html().split(",")[0]);
-        } else {
-            $("#package-name").html('');
         }
-
-        if (packageNotExists == true) {
-            $('select#InternetPackage' + category + 'Types').css({'color': '#E52721'});
-            $('select#InternetPackage' + category + 'Types').append(
-                $('.package').html("بسته ای در این دسته وجود ندارد.")
-            );
-            $('.package').css('direction', 'rtl');
-        } else {
-            $('select#InternetPackage' + category + 'Types').css({'color': '#5c5c5c'});
-            $('.package').css('direction', 'ltr');
-        }
-
-        $('.container.InternetPackage .InternetPackage input#UnitAmount').val($('select#InternetPackage' + category + 'Types').find("option:first-child").data('price'));
-
-        console.log(options);
-        setPackage();
     }
 
     function setAmounts() {

@@ -132,31 +132,15 @@
 				<section class="internet-package">
 					<div>
 						<div class="operator active MTN" data-type="MTN" data-name="ایرانسل"></div>
-						<div class="text"><p>بسته اینترنت ایرانسل</p></div>
+                        <div class="operator MCI" data-type="MCI" data-name="همراه اول"></div>
+                        <div class="operator Rightel" data-type="RTL" data-name="رایتل"></div>
 					</div>
-					<select>
+                    <div class="sim-type">
+                        <div class="clear"></div>
+                    </div>
+                    <select>
 						<option class="IN-MTN-Hourly" data-package-type="IN-MTN-Hourly">ساعتی</option>
-						<option class="IN-MTN-Daily" data-package-type="IN-MTN-Daily">روزانه</option>
-						<option class="IN-MTN-Weekly" data-package-type="IN-MTN-Weekly">هفتگی</option>
-						<option class="IN-MTN-Monthly" data-package-type="IN-MTN-Monthly">ماهانه</option>
-						<option class="IN-MTN-Amazing" data-package-type="IN-MTN-Amazing">شگفت انگیز</option>
-						<option class="IN-MTN-TDLTE" data-package-type="IN-MTN-TDLTE">ثابت (TD-LTE)</option>
 					</select>
-					<div class="sim-type">
-						<section>
-							<label class="charge-type">
-								<input type="radio" name="radio-sim-type" value="Prepaid" class="charge-button"></input>
-								<p>سیم کارت اعتباری</p>
-							</label>
-						</section>
-						<section>
-							<label class="charge-type">
-								<input type="radio" name="radio-sim-type" value="Postpaid" class="charge-button"></input>
-								<p class="charge-type">سیم کارت دائمی</p>
-							</label>
-						</section>
-						<div class="clear"></div>
-					</div>
 					<div class="package">
 						
 					</div>
@@ -318,7 +302,7 @@
 			<input type="text" name="data[issuer]" id="dataIssuer" value="">
 			<input type="hidden" name="data[paymentDetails]" value="true">
 			<input type="text" name="data[redirectToPage]"  value="true">
-			<input type="text" name="data[scriptVersion]"  value="Script-metro-1.0">
+			<input type="text" name="data[scriptVersion]"  value="Script-metro-1.1">
 			<input type="text" name="data[firstOutputType]"  value="json">
 			<input type="text" name="data[secondOutputType]"  value="get">
 		</form>

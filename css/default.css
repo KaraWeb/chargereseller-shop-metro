@@ -560,8 +560,9 @@ div.cellphone input:focus, .mail input:focus, .bill-payment > input:focus {
 }
 .package {
 	padding-right: 15px;
-	height: 220px;
+	height: 190px;
 	overflow-y: auto;
+	margin-top: 10px !important;
 }
 section.product-type {
 	width: 48px;
