@@ -241,7 +241,7 @@ $(document).ready(function () {
     });
 
     $(".submit").click(function (e) {
-        if ($("#dataChargeKind").val() == 'bill-payment' && ($('#dataBillId').val() == '' || $('#dataPaymentId') == '' )) {
+        if ($("#dataChargeKind").val() == 'bill-payment' && ($('#dataBillId').val() == '' || $('#dataPaymentId') == '')) {
             $(".hint-bill").text('شناسه قبض و شناسه پرداخت را وارد نمایید', 'تذکر');
             $(".hint-bill").slideDown();
             return false;
@@ -362,7 +362,7 @@ $(document).ready(function () {
                 emailCheck = false;
             }
         } else if (DefaultChargeKind == 'PIN') {
-            if ((cellphone.length == 0 || jQuery.inArray(cellphone, ['093', '090', '091', '092', '0932']) != -1) && email.length == 0) {
+            if ((cellphone.length == 0 || jQuery.inArray(cellphone, ['093', '090', '091', '092']) != -1) && email.length == 0) {
                 cellphoneCheck = false;
                 emptyCheck = false;
                 $(".hint-cell p").text('جهت استفاده از خدمات پشتیبانی، ایمیل یا شماره موبایل خود را وارد نمایید.');
@@ -372,7 +372,7 @@ $(document).ready(function () {
                     emailCheck = false;
                 }
 
-                if (emailCheck && jQuery.inArray(cellphone, ['093', '090', '091', '092', '0932']) == -1) {
+                if (emailCheck && jQuery.inArray(cellphone, ['093', '090', '091', '092']) == -1) {
                     if (cellphone.length == 11 && !isNaN(cellphone)) {
                         if (jQuery.inArray(cellphone.substr(0, 3), ['090', '091', '092', '093', '099']) == -1) {
                             cellphoneCheck = false;
