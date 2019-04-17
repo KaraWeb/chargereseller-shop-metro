@@ -343,7 +343,7 @@
 		border: 1px solid #5c8ede;
 	}
 	.invoice {
-		width: calc(50% - 5px);
+		width: calc(46% - 5px);
 		height: 240px;
 		background-color: rgba(90, 20, 226, 0.32);
 		float: right;
@@ -352,7 +352,7 @@
 		border: 1px solid #a27de4;
 	}
 	.payment {
-		width: calc(50% - 5px);
+		width: calc(54% - 5px);
 		height: 240px;
 		background-color: rgba(0, 189, 66, 0.32);
 		float: left;
@@ -439,49 +439,55 @@
 		width: 48px;
 		height: 48px;
 		background-color: #ffffff;
-		background-image: url("../img/payment-gateways.png");
+		background-image: url("../img/payment-gateways.png?v=999");
 		background-repeat: no-repeat;
 		margin: 2px 5px;
 		cursor: pointer;
 		display: none;
 		position: relative;
 	}
-	.parsian {
-		background-position: 0 2px;
-	}
 	.mellat {
-		background-position: -44px 3px;
+		background-position: -43px -43px;
 	}
 	.saman {
-		background-position: -89px 3px;
+		background-position: -88px -43px;
 	}
-	.melli {
-		background-position: -135px 2px;
-	}
-	.fanava {
-		background-position: -179px 3px;
+	.emtiaz {
+		display: inline-block !important;
+		background-position: -270px -45px;
 	}
 	.zarrinpal {
-		background-position: -224px 3px;
+		background-position: -223px -43px;
 	}
-
-	.parsian.active {
-		background-position: -272px 2px;
+	.parsian {
+		background-position: 2px -43px;
+	}
+	.melli {
+		background-position: -134px -43px;
+	}
+	.fanava {
+		background-position: -177px -43px;
 	}
 	.mellat.active {
-		background-position: -316px 3px;
+		background-position: -43px 2px;
 	}
 	.saman.active {
-		background-position: -361px 3px;
+		background-position: -88px 2px;
 	}
-	.melli.active {
-		background-position: -407px 2px;
-	}
-	.fanava.active {
-		background-position: -451px 2px;
+	.emtiaz.active {
+		background-position: -270px 0;
 	}
 	.zarrinpal.active {
-		background-position: -496px 2px;
+		background-position: -223px 2px;
+	}
+	.parsian.active {
+		background-position: 2px 2px;
+	}
+	.melli.active {
+		background-position: -134px 3px;
+	}
+	.fanava.active {
+		background-position: -177px 2px;
 	}
 	.attention {
 		width: 100%;
