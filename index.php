@@ -302,7 +302,7 @@
 			<input type="text" name="data[issuer]" id="dataIssuer" value="">
 			<input type="hidden" name="data[paymentDetails]" value="true">
 			<input type="text" name="data[redirectToPage]"  value="true">
-			<input type="text" name="data[scriptVersion]"  value="Script-metro-1.2">
+			<input type="text" name="data[scriptVersion]"  value="Script-metro-1.3">
 			<input type="text" name="data[firstOutputType]"  value="json">
 			<input type="text" name="data[secondOutputType]"  value="get">
 		</form>
