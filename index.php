@@ -10,6 +10,7 @@
 		<link type="image/x-icon" rel="icon" href="css/favicon.ico"/>
 		<link type="text/css" rel="stylesheet" href="css/jquery.qtip.min.css" />
 		<link type="text/css" rel="stylesheet" href="css/default.min.css">
+		<link type="text/css" rel="stylesheet" href="css/sweetalert2.css">
 	</head>
 	<body>
 	<div class="set">
@@ -297,18 +298,20 @@
 			<input type="text" name="data[billId]" id="dataBillId" value="">
 			<input type="text" name="data[paymentId]" id="dataPaymentId" value="">
 			<input type="text" name="data[productId]" id="dataProductId" value="">
+			<input type="text" name="data[isTarabord]" id="dataIsTarabord" value="">
 			<input type="text" name="data[webserviceId]" id="dataWebserviceId" value="<?php echo $config['webserviceID']; ?>">
 			<input type="text" name="data[redirectUrl]" id="dataRedirectUrl" value="<?php echo $root . '/verify.php'; ?>">
 			<input type="text" name="data[issuer]" id="dataIssuer" value="">
 			<input type="hidden" name="data[paymentDetails]" value="true">
 			<input type="text" name="data[redirectToPage]"  value="true">
-			<input type="text" name="data[scriptVersion]"  value="Script-metro-1.3">
+			<input type="text" name="data[scriptVersion]"  value="Script-metro-1.4">
 			<input type="text" name="data[firstOutputType]"  value="json">
 			<input type="text" name="data[secondOutputType]"  value="get">
 		</form>
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/jquery.cookie.min.js"></script>
 		<script type='text/javascript' src='js/jquery.qtip.min.js'></script>
+		<script type='text/javascript' src='js/sweetalert2.js'></script>
 		<script src="js/script.min.js"></script>
 		<script type="text/javascript" src="https://cdn.zarinpal.com/zarinak/v1/checkout.js"></script>
 	</div>
