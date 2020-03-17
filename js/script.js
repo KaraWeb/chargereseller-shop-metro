@@ -548,18 +548,26 @@ $(document).ready(function () {
                 $(".hint-bill").slideDown();
                 return;
             }
-            var billTypesPersian = ["آب", "برق", "گاز", "تلفن ثابت", "تلفن همراه", "عوارض شهرداری", "", "", "راهنمایی و رانندگی"];
-            var billTypesEnglish = ["water", "electricity", "gas", "telephone", "cellphone", "mayoralty", "", "", "police"];
+            var billTypesPersian = ["آب", "بــرق", "گـــاز", "تلفن ثابت", "تلفن همراه", "عوارض شهرداری", "", "", "جریمه راهنمایی و رانندگی", "بیمه پاسارگاد", "سایر"];
+            var billTypesEnglish = ["water", "electricity", "gas", "telephone", "cellphone", "mayoralty", "", "", "police", "pasargad", "others"];
             var billLength = billId.length;
             var paymentLength = paymentId.length;
             var billType = billId.substr((billLength - 2), 1) - 1;
+            if (billType === -1) {
+                billCoNumber = billId.substr((billLength - 5), 3);
+                if(billCoNumber  == 102){
+                    billType = 9;
+                }else{
+                    billType = 10;
+                }
+            }
             var billAmount = paymentId.substr(0, (paymentLength - 5)) * 100; // toman
             $("#dataBillId").val(billId);
             $("#dataPaymentId").val(paymentId);
             $("#dataAmount").val(billAmount)
             $('.invoice .bil-payment .product-type').text(billTypesPersian[billType]);
             $('.invoice .bill-payment .final-price').text(billAmount + " تومان");
-            $(".invoice .bill-payment .product-type").addClass(billTypesEnglish[billType]);
+            $(".invoice .bill-payment .product-type").removeClass().addClass('product-type').addClass(billTypesEnglish[billType]);
             $(".invoice .bill-payment .product-type").css('display', 'inline-block');
         }
 
