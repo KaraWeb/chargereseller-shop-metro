@@ -395,7 +395,7 @@ $(document).ready(function () {
                 regex = cellphoneFormats['tdlte'];
             }
             if (!isTarabord) {
-                if (cellphone.length == 11 && !isNaN(cellphone) && jQuery.inArray(cellphone.substr(0, 3), ['090', '091', '092', '093', '099']) !== -1) {
+                if (cellphone.length == 11 && !isNaN(cellphone) && jQuery.inArray(cellphone.substr(0, 3), ['090', '091', '092', '093', '099','094']) !== -1) {
                     if (!regex.test(cellphone)) {
                         cellphoneFormatCheck = false;
                     }
