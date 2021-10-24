@@ -24,11 +24,18 @@
 				<section class="error">
 					<div class="image"><img alt="پشتیبانی" src="img/support.png"></div>
 					<p>در صورت بروز هرگونه اشکال و یا نیاز به راهنمائی می توانید با واحد پشتیبانی تماس حاصل فرمائید.</p>
-					<p><strong>تلفن پشتیبانی: 88019574-021</strong></p>
+					<p>
+                        <strong>تلفن پشتیبانی:
+                            <span class="support-number"></span>
+                        </strong></p>
 					<p>پشتیبانی تلفنی شنبه تا چهارشنبه از ساعت 9 الی 17 پاسخگوی شماست.</p>
-					<p>آدرس ایمیل: chargereseller24@gmail.com</p>
+					<p>آدرس ایمیل:
+                        <span class="support-mail"></span>
+                    </p>
 				</section>
 			</div>
 		</div>
-	</body>
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/support.min.js?v=1.0"></script>
+    </body>
 </html>
