@@ -439,13 +439,13 @@ $(document).ready(function () {
                     Swal.fire({
                         title: '',
                         text: "شما " + (DefaultChargeKind === "TopUp" ? "شارژ مستقیم" : "بسته اینترنت") + " " + operatorsName[DefaultOperator] + " را انتخاب کردید اما شماره " + cellphone + " مربوط به اپراتور " + operatorsName[DefaultOperator] + " نیست!" +
-                        " آیا این شماره را به "+operatorsName[DefaultOperator]+" ترابرد کردید؟\n",
+                        " آیا این شماره را به " + operatorsName[DefaultOperator] + " ترابرد کردید؟\n",
                         type: 'warning',
                         showCancelButton: true,
                         confirmButtonColor: '#3085d6',
                         cancelButtonColor: '#d33',
                         confirmButtonText: 'بله ترابرد کردم.',
-                        cancelButtonText:  'خیر اشتباه شد.'
+                        cancelButtonText: 'خیر اشتباه شد.'
                     }).then((result) => {
                         if (result.value) {
                             cellphoneFormatCheck = true;
@@ -455,7 +455,7 @@ $(document).ready(function () {
                         } else {
                             Swal.fire({
                                 title: '',
-                                text:'شماره صحیح  اپراتور ' + operatorsName[DefaultOperator] + " را وارد کنید.",
+                                text: 'شماره صحیح  اپراتور ' + operatorsName[DefaultOperator] + " را وارد کنید.",
                                 type: 'warning',
                                 confirmButtonText: 'باشه.',
                             });
@@ -555,9 +555,9 @@ $(document).ready(function () {
             var billType = billId.substr((billLength - 2), 1) - 1;
             if (billType === -1) {
                 billCoNumber = billId.substr((billLength - 5), 3);
-                if(billCoNumber  == 102){
+                if (billCoNumber == 102) {
                     billType = 9;
-                }else{
+                } else {
                     billType = 10;
                 }
             }
@@ -637,16 +637,22 @@ $(document).ready(function () {
     });
 
     function initailize() {
-        var gate = 0;
-        $.each(paymentGateways, function (index, value) {
-            $(".gateway[data-gateway-type=" + value + "]").css('display', 'inline-block');
-            gate += 1;
-        });
-        if (gate > 3) {
-            $(".gateways-container").css('margin', '10px auto')
-        } else {
-            $(".gateways-container").css('margin', '40px auto')
+        // var gate = 0;
+        // $.each(paymentGateways, function (index, value) {
+        //     $(".gateway[data-gateway-type=" + value + "]").css('display', 'inline-block');
+        //     gate += 1;
+        // });
+        //Add payment gateways to form
+        paymentGateways = paymentGateways.filter(gateway => gateway == 'Zarinpal' || gateway == 'Emtiyaz');
+        paymentGateways.push('Default');
+        paymentGateways.reverse();
+        if (paymentGateways.length > 1) {
+            $.each(paymentGateways, function (index, value) {
+                    $(".gateway[data-gateway-type=" + value + "]").css('display', 'inline-block');
+            });
         }
+        $(".gateways-container").css('margin', '40px auto')
+
         $.each(products, function (key, val) {
             if (jQuery.isEmptyObject(val)) {
                 $('#content fieldset > .' + key).html('<p class="service-caution">در حال حاضر در این دسته محصولی برای فروش وجود ندارد.</p>');

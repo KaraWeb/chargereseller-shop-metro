@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, maximum-scale=1.0">
 		<link type="image/x-icon" rel="icon" href="css/favicon.ico"/>
 		<link type="text/css" rel="stylesheet" href="css/jquery.qtip.min.css" />
-		<link type="text/css" rel="stylesheet" href="css/default.min.css">
+		<link type="text/css" rel="stylesheet" href="css/default.min.css?v=1.0">
 		<link type="text/css" rel="stylesheet" href="css/sweetalert2.css">
 	</head>
 	<body>
@@ -259,7 +259,8 @@
 					</div>
 					<div class="payment">
 						<div class="gateways-container">
-							<div class="gateway mellat" data-gateway-type="Mellat"></div>
+                            <div class="gateway default" data-gateway-type="Default"></div>
+                            <div class="gateway mellat" data-gateway-type="Mellat"></div>
 							<div class="gateway saman" data-gateway-type="Saman"></div>
                             <div class="gateway emtiaz" data-gateway-type="Emtiyaz" data-tooltip="امتیاز"></div>
                             <div class="gateway zarrinpal" data-gateway-type="Zarinpal"></div>
@@ -312,7 +313,7 @@
 		<script src="js/jquery.cookie.min.js"></script>
 		<script type='text/javascript' src='js/jquery.qtip.min.js'></script>
 		<script type='text/javascript' src='js/sweetalert2.js'></script>
-		<script src="js/script.min.js"></script>
+		<script src="js/script.min.js?v=1.0"></script>
 		<script type="text/javascript" src="https://cdn.zarinpal.com/zarinak/v1/checkout.js"></script>
 	</div>
 	<div class="load">
