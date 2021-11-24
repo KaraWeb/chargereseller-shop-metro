@@ -270,7 +270,7 @@
 		background-color: #ffffff;
 		margin: 0 auto;
 		margin-top: 15px;
-		margin-bottom: 10px;
+		margin-bottom: auto;
 	}
 	.increase, .decrease {
 		width: 40px;
@@ -972,4 +972,15 @@
 			margin-right: 0
 		}
 
+	}
+
+	.bargain .antivirus, .bargain .giftcard{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
+	}
+
+	.bargain .antivirus .list,.bargain .giftcard .list{
+		height: auto;
 	}

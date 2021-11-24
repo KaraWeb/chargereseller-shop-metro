@@ -39,10 +39,10 @@ $(document).ready(function () {
             $('.sticky-menu').fadeIn();
             clicks++;
         }
-
         if ($(this).data("type") == $('#dataChargeKind').val()) {
             return false;
         }
+        $('.pin-counter').prop('style','block');
         $(".invoice .antivirus li").css('margin-bottom', '15px');
         $(".giftcard-types").removeClass("active");
         $(".antivirus-types").removeClass("active");
@@ -50,6 +50,7 @@ $(document).ready(function () {
         if (menu == ".internetpackage") {
             menu = ".internet-package";
         }
+
         $(".invoice div").slideUp(300, "swing");
         $(".invoice " + menu).slideDown(300, "swing");
         $('.hint-cell, .hint-mail').slideUp();
@@ -627,6 +628,8 @@ $(document).ready(function () {
             products = data.products;
             paymentGateways = data.paymentGateways;
             initailize();
+            $('.support-number').html(data.support.phone || '');
+            $('.support-mail').html(data.support.email || '');
             $('.load').fadeOut();
         },
         error: function (e) {
@@ -637,12 +640,6 @@ $(document).ready(function () {
     });
 
     function initailize() {
-        // var gate = 0;
-        // $.each(paymentGateways, function (index, value) {
-        //     $(".gateway[data-gateway-type=" + value + "]").css('display', 'inline-block');
-        //     gate += 1;
-        // });
-        //Add payment gateways to form
         paymentGateways = paymentGateways.filter(gateway => gateway == 'Zarinpal' || gateway == 'Emtiyaz');
         paymentGateways.push('Default');
         paymentGateways.reverse();
@@ -650,6 +647,8 @@ $(document).ready(function () {
             $.each(paymentGateways, function (index, value) {
                     $(".gateway[data-gateway-type=" + value + "]").css('display', 'inline-block');
             });
+        }else{
+            $('.payment-gateways ul').remove()
         }
         $(".gateways-container").css('margin', '40px auto')
 
@@ -711,6 +710,10 @@ $(document).ready(function () {
         $.each(jsonData, function (key, value) {
             options += "<section data-product-id=\"" + value.id + "\" data-price=\"" + value.price + "\"><div  class=\"credit-info\">" + value.name + "</div><div class=\"price-info\">" + value.price + " تومان</div><div class='clear'></div></section>";
         });
+        if(options === ""){
+            options = "<p class='service-caution' style='text-align: center'>در حال حاضر این محصول موجود نمی باشد.</p>";
+            $('.pin-counter').css('display','none');
+        }
         $(".list").html(options).show();
         $("#dataProductId").val($(".list section:first-child").data("product-id"));
         $("#dataAmount").val($(".list section:first-child").data("price"));
